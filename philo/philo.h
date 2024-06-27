@@ -18,5 +18,19 @@
 # include <sys/time.h>
 # include <unistd.h>
 
+typedef struct s_philosopher {
+    int id;
+} t_philosopher;
+
+
+
+typedef struct s_philo_manager {
+    t_philosopher *philosophers;
+    pthread_mutex_t *forks;
+    int time_to_die;
+    int time_to_eat;
+    int time_to_sleep;
+    int number_of_times_each_philosopher_must_eat;
+} t_philo_manager;
 
 #endif
