@@ -1,17 +1,26 @@
 #include "philo.h"
 
+void convert_argv_to_int(int argc, char **argv, int *arr)
+{
+    (void) argc;
+    (void) argv;
+    (void) arr;
+    return;
+}
+
 int main(int argc, char **argv)
 {
-    (void) argv;
+    int size;
+    int *arr;
 
     if (argc != 5 && argc != 6)
     {
-        // beleza numero errado de inputs ja mata o programa
-        printf("Error: Wrong number of arguments\n");
+        write(2, "Error: Wrong number of arguments\n", 33);
         return (1);
     }
-    // aqui posso criar a estrutura e virificar se os valores sao validos
-    
+    size = argc - 1;
+    arr = (int *)malloc(sizeof(int) * (size));
+    convert_argv_to_int(argc, argv, arr);    
     printf("Eu estou aqui\n");
 }
 
